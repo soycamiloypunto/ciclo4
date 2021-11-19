@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <title>Demo</title>
+    <meta name="description" content=""/>
+    <meta name="viewport" content="width=device-width"/>
+    <base href="/"/>
+    <link rel="stylesheet" type="text/css" href="/webjars/bootstrap/css/bootstrap.min.css"/>
+    <script type="text/javascript" src="/webjars/jquery/jquery.min.js"></script>
+    <script type="text/javascript" src="/webjars/bootstrap/js/bootstrap.min.js"></script>
+    <link  rel="icon"   href="https://cdn-icons-png.flaticon.com/512/194/194931.png" type="image/png" />
+    
+     <!--BOOTSTRAP CSS y JS-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <!-- Los iconos tipo Solid de Fontawesome-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/solid.css">
+    <script src="https://use.fontawesome.com/releases/v5.13.0/js/all.js"></script>
+    <!--CSS Personalizado-->
+    <link rel="stylesheet" href="/assets/css/estilos.css">
+    
+    <div class="authenticated" style="display:none">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="index.html">Ciclo 4 - G8 - CCTV</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarText">
+          <ul class="navbar-nav mr-auto">
+            
+          </ul>
+          
+        </div>
+    </nav>
+    </div>
+
+
+    <div class="unauthenticated">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="index.html">Ciclo 4 - G8 - CCTV</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarText">
+              <ul class="navbar-nav mr-auto">
+                
+              </ul>
+
+            </div>
+        </nav>
+    </div>
+
+    
+</head>
+<body>
+    <br>
+	
+        <div class="authenticated" style="display:none">
+            <h1 class="text-center">Misión TIC 2021</h1>
+            <section id="cover" class="min-vh-100">
+                <div id="cover-caption" class="margen">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-xl-5 col-lg-6 col-md-8 col-sm-8 mx-auto text-center form p4">
+                                <div class="col-12 user-img">
+                                    <img src="https://cdn.pixabay.com/photo/2020/07/14/13/07/icon-5404125_1280.png" alt="">
+                                </div>
+                                <!-- <h1 class="mb-3 display-4 py-2 text-truncate">Ingreso App</h1> -->
+                                <div class="px-2">
+                                    <form action="" class="justify-content-center">
+                                        
+                                            <!-- <label class="sr-only">Name</label> -->
+                                            <p>Ha iniciado como: <span id="user"></span></p>
+                                            
+                                            <!-- <i class="fa fa-user fa-lg fa-fw" aria-hidden="true"></i> -->
+                                        
+                                        
+                                    </form>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+        
+        
+        <div class="unauthenticated">
+         <!-- <h1 class="mb-3 display-4 py-2 text-truncate">Ingreso App</h1> -->
+            <section id="cover" class="min-vh-100">
+                <div id="cover-caption" class="margen">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-xl-5 col-lg-6 col-md-8 col-sm-8 mx-auto text-center form p4">
+                                <div class="col-12 user-img">
+                                    <img src="https://cdn.pixabay.com/photo/2020/07/14/13/07/icon-5404125_1280.png" >
+                                </div>
+                                <!-- <h1 class="mb-3 display-4 py-2 text-truncate">Ingreso App</h1> -->
+                                <div class="px-2">
+                                    <form action="" class="justify-content-center">
+                                        <div class="form-group"  id="user-group">
+                                            <!-- <label class="sr-only">Name</label> -->
+                                            <input type="text" class="form-control" placeholder="Nombre de Usuario">
+                                            <!-- <i class="fa fa-user fa-lg fa-fw" aria-hidden="true"></i> -->
+                                        </div>
+                                        <div class="form-group"  id="pass-group">
+                                            <!-- <label class="sr-only">Email</label> -->
+                                            <input type="password" class="form-control" placeholder="Contraseña">
+                                        </div>
+                                        <a href="#" class="btn btn-primary btn-lg" role="button"><i class="fa fa-sign-in-alt"></i>Iniciar</a>
+                                        <a href="/oauth2/authorization/github" class="btn btn-primary btn-lg" role="button"><i class="fab fa-github"></i>Iniciar con GIT</a>
+                                        
+                                        
+                                    </form>
+                                    <div class="col-12 forgot">
+                                        <a href="/register.html">Registrar Ahora</a>
+                                    </div>
+                                    <div class="col-12 forgot">
+                                        <a href="#">Olvidé la Contraseña</a>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+        
+</body>
+<script type="text/javascript">
+    $.get("/user", function(data) {
+        $("#user").html(data.name);
+        $(".unauthenticated").hide()
+        $(".authenticated").show()
+    });
+</script>
+
+</html>
