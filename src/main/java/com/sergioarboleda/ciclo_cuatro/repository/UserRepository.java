@@ -48,7 +48,7 @@ public class UserRepository {
         
     }
     
-    public Object findByEmailAndPassword(String email, String password){
+    public Optional<Object> findByEmailAndPassword(String email, String password){
         return userCrudRepository.findByEmailAndPassword(email, password);
         
     }

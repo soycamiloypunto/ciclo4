@@ -90,7 +90,20 @@ public class UserService {
     }
     
     public Object getEmailAndPassword(String email, String password){
-        return userRepository.findByEmailAndPassword(email, password);
+        //return userRepository.findByEmailAndPassword(email, password);
+        
+        if(userRepository.findByEmailAndPassword(email, password).isPresent()){
+            return userRepository.findByEmailAndPassword(email, password);
+        }else{
+            UserAndMail ObjetoCreado= new UserAndMail();
+            ObjetoCreado.setEmail(email);
+            ObjetoCreado.setPassword(password);
+            ObjetoCreado.setName("NO DEFINIDO");
+            System.out.println("Objeto NULO: "+ObjetoCreado);
+            return ObjetoCreado;
+        }
+        
+        
 //        System.out.println("Objeto: "+userRepository.findByEmailAndPassword(email, password));
 //        if(userRepository.findByEmailAndPassword(email, password)==null){
 //            UserAndMail ObjetoCreado= new UserAndMail();

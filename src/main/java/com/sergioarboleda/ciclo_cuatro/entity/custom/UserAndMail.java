@@ -9,7 +9,7 @@ package com.sergioarboleda.ciclo_cuatro.entity.custom;
  * @author camilo
  */
 public class UserAndMail {
-    private int id;
+    private Integer id;
     private String email;
     private String password;
     private String name;
@@ -17,17 +17,18 @@ public class UserAndMail {
     public UserAndMail() {
     }
 
-    public UserAndMail(String email, String password, String name) {
+    public UserAndMail(Integer id, String email, String password, String name) {
+        this.id = id;
         this.email = email;
         this.password = password;
         this.name = name;
     }
 
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
