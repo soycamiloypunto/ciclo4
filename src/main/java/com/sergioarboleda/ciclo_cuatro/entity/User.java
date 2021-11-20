@@ -24,19 +24,19 @@ public class User{
     private Integer id;
     @Column(length = 50, unique = true, nullable = false)
     private String email; 
-    @Column(length = 80, nullable = false)
-    private String name="NO DEFINIDO";
     @Column(length = 50, nullable = false)
     private String password;
+    @Column(length = 80, nullable = false)
+    private String name;
 
     public User() {
     }
 
-    public User(Integer id, String email, String name, String password) {
+    public User(Integer id, String email, String password, String name) {
         this.id = id;
         this.email = email;
-        this.name = name;
         this.password = password;
+        this.name = name;
     }
 
     public Integer getId() {
@@ -55,14 +55,6 @@ public class User{
         this.email = email;
     }
 
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
     public String getPassword() {
         return password;
     }
@@ -71,6 +63,14 @@ public class User{
         this.password = password;
     }
 
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+    
     
     
 }
